@@ -20,20 +20,22 @@ body{
 
 nav{
     display: flex;
-    justify-content: space-between;
+    justify-content: start;
     align-items: center;
     background-color: #f8fafd;
     grid-row: 1/2;
     grid-column: 1/-1;
     padding: .5rem 1rem;
+    cursor: pointer;
     
 }
 
 nav .icons{
+    min-width: 240px;
     display: flex;
     justify-content: start;
     align-items: center;
-    padding-right: 1rem;
+    padding-right: .3rem;
 }
 nav .nav-logo{
     width: 40px;
@@ -58,6 +60,18 @@ nav .right-icons{
     display: flex;
     justify-content: center;
     align-items: center;
+    margin:0;
+    
+}
+
+nav .right-icons svg{
+   
+    padding: .5rem;
+    border-radius: 50%;
+}
+
+nav .right-icons svg:hover{
+    background-color: #dadcde;
 }
 
 
@@ -209,9 +223,11 @@ nav .profile-pic{
     width: 14px;
 }
 
-.i-btn svg{
+span.i-btn .i-btn-svg{
+    box-sizing: content-box;
     width: 20px;
     height: 20px;
+    padding: 0;
 }
 .layout-one{
     border:1px solid black;
@@ -258,10 +274,18 @@ nav .profile-pic{
 
     }
 
-    .left-sidebar{
-
+    .left-sidebar, nav .icons{
         display: none;
     }
+
+    nav .right-icons{
+        width: 100%;
+        justify-content: space-between;
+    }
+    .search-bar{
+        width:100%;
+    }
+   
 
 
     main{
@@ -273,10 +297,69 @@ nav .profile-pic{
         justify-content: center;
     }
 
+    .small-screen-sidebar{
+       
+        background-color:#e9eef6;
+        display: flex;
+        justify-content: space-between;
+        padding: 5px 16px 10px 16px;
+        position: fixed;
+        bottom: 0px;
+        left:0;
+        right:0;
+      
+    }
     
 
 
 }
+
+
+/*<!----------------------------small screen bottom bar-------------------------------------->*/
+
+
+/* Define styles for screens larger than 780px */
+@media (min-width: 781px) {
+    .small-screen-sidebar {
+        display: none; /* Hide the small screen sidebar on larger screens */
+    }
+}
+
+
+
+
+
+
+.small-screen-sidebar-list svg{
+    width:20px;
+    height:20px;
+    padding: 2px 20px;
+    border-radius: 200px;
+    
+}
+
+.small-screen-sidebar-list svg:hover{
+    background-color: #c2e7ff;
+    padding: 2px 20px;
+    border-radius: 200px;
+}
+
+
+
+.small-screen-sidebar-list {
+    display: flex;
+    flex-direction:column;
+    align-items: center;
+}
+
+
+
+
+
+/*<!----------------------------small screen bottom bar-------------------------------------->*/
+
+
+
 
 .file-menu .card{
     width: 280px;
@@ -333,12 +416,12 @@ div.body-img{
 
 
 .search-bar{
-    max-width: 600px;
+    
     flex-grow: 1;
 }
 
 form{
-    max-width: 500px;
+   max-width: 750px;
     background-color: #E9EEF6;
     position: relative;
     
